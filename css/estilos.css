@@ -1,0 +1,170 @@
+body, html{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+body{
+    font-family:'Roboto', sans-serif;
+    text-align: center;
+    background: -webkit-radial-gradient(
+        rgb(46, 63, 131),
+        rgb(22, 30, 61),
+        rgb(10, 14, 31)
+    );
+    color:#8ed6ff;
+    font-size: 80pt;
+    font-weight: bold;
+}
+
+h1{
+    color: #eee;
+}
+
+h2{
+    color: #eee;
+    opacity: .3;
+}
+
+.nubes, .mapa{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nubes{
+    width: 220px;
+    height: 220px;   
+}
+
+.nubes img{
+    position: relative;
+    z-index: 20;
+}
+
+.mapa{
+    width: 80px;
+    height: 80px;
+    background: url(../images/mapa.png);
+    border-radius: 50%;
+    box-shadow: -10px -7px 0 0 rgba(0, 0, 0, .1) inset,
+                -20px -13px 0 0 rgba(0, 0, 0, .1) inset,
+                  2px 2px 0 0 rgba(255, 255, 255, .2) inset;
+    background-size: cover;
+
+    -webkit-animation: tierra-girando 5s infinite linear;
+}
+
+.mapa::before{
+    content: "D ";
+    padding: 45px;
+}
+
+.mapa::after{
+    content: " T";
+    padding: 45px;
+}
+
+@-webkit-keyframes tierra-girando{
+
+    from{
+        background-position: left center;
+    }
+    to{
+        background-position: -396px center;
+    }
+
+}
+
+ /*
+.estrella{
+    width: 2px;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    border-radius: 50%;
+    
+}
+
+.uno{
+    top: 11%;
+    left: 20%;
+}
+
+.dos{
+    top: 70%;
+    left: 28%;
+}
+
+.tres{
+    top: 70%;
+    left: 10%;
+}
+
+.cuatro{
+    top: 20%;
+    left: 90%;
+}
+
+.cinco{
+    top: 40%;
+    left: 20%;
+}
+
+.seis{
+    top: 87%;
+    left: 70%;
+}
+
+.siete{
+    top: 20%;
+    left: 60%;
+}
+
+.ocho{
+    top: 70%;
+    left: 55%;
+}
+
+.nueve{
+    top: 55%;
+    left: 80%;
+}
+
+.diez{
+    top: 90%;
+    left: 90%;
+}
+.estrella:nth-child(2n){
+    -webkit-animation: estrella-par 2s infinite;
+}
+
+
+@-webkit-keyframes estrella-par{
+    0% , 90%{
+        box-shadow: 0 0 3px 3px rgba(255, 255, 255, .3);
+    }
+    100%{
+        box-shadow: 0 0 16px 16px rgba(255, 255, 255, .3);
+    }
+}
+
+.estrella:nth-child(2n+1){
+    -webkit-animation: estrella-inpar 2s infinite;
+}
+
+
+@-webkit-keyframes estrella-inpar{
+    0% ,35%, 50%{
+        box-shadow: 0 0 3px 3px rgba(255, 255, 255, .3);
+    }
+    45%{
+        box-shadow: 0 0 16px 16px rgba(255, 255, 255, .3);
+    }
+}
